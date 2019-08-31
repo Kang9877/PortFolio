@@ -48,6 +48,11 @@
 
   <!-- Masthead -->
   <header class="masthead bg-primary text-white text-center">
+    <div class="select-language">
+      <img class="nat_usa" src="img/portfolio/kr.png" alt="" width="40" style="margin:20px" onclick="changeLanguage('kor');">
+      <img class="nat_kor" src="img/portfolio/us.png" alt="" width="40" style="margin:20px" onclick="changeLanguage('usa');">
+      <img class="nat_jpn" src="img/portfolio/jp.png" alt="" width="40" style="margin:20px" onclick="changeLanguage('jpn');">
+    </div>
     <div class="container d-flex align-items-center flex-column">
 
       <!-- Masthead Avatar Image -->
@@ -570,6 +575,22 @@
   <!-- Custom scripts for this template -->
   <script src="js/freelancer.min.js"></script>
 
+  <script  type="text/javascript">
+    function changeLanguage(_lang){
+      $.ajax({
+        type : "GET",
+        url : _lang+".html",
+        dataType : "text",
+        error : function() {
+          alert('통신실패!!');
+        },
+        success : function(data) {
+          alert(_lang);
+        }
+
+      });
+    }
+  </script>
 </body>
 
 </html>
