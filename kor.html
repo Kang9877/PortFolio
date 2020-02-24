@@ -9,7 +9,7 @@
   <meta name="author" content="">
 
   <title>Kang's PORTFOLIO</title>
-
+  <script type="text/javascript" src="js/slick.min.js"></script>
   <!-- Custom fonts for this theme -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -17,6 +17,8 @@
 
   <!-- Theme CSS -->
   <link href="css/freelancer.min.css" rel="stylesheet">
+  <link href="css/slick.css" rel="stylesheet">
+  <link href="css/slick-theme.css" rel="stylesheet">
 
 </head>
 
@@ -59,7 +61,7 @@
     <div class="container d-flex align-items-center flex-column">
 
       <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-5" src="img/avataaars.svg" alt="">
+      <img class="masthead-avatar mb-5" src="img/portfolio/5.jpg" alt="">
 
       <!-- Masthead Heading -->
       <h1 class="masthead-heading text-uppercase mb-0">강 상 훈</h1>
@@ -385,7 +387,11 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="img/portfolio/sound1.png" alt="">
+                <div class="slider1">
+                  <div><img class="img-fluid rounded mb-5" src="img/portfolio/sound1.png" alt=""></div>
+                  <div><img class="img-fluid rounded mb-5" src="img/portfolio/sound2.png" alt=""></div>
+                  <div><img class="img-fluid rounded mb-5" src="img/portfolio/sound3.png" alt=""></div>
+                </div>
                 <!-- Portfolio Modal - Text -->
                 <p class="mb-5">
                   기간 : 2018/12~2019/09(지속적 고도화 중)</br>
@@ -773,6 +779,14 @@
   <script src="js/freelancer.min.js"></script>
 
   <script  type="text/javascript">
+      $(document).ready(function(){
+      $('.slider1').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000
+      });
+    }
     function changeLanguage(_lang){
       $.ajax({
         type : "GET",
